@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bmw</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+        }
+        header{
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            padding: 20px;
+            text-align: center;
+            background-image: url(girl.webp);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        header h1{
+            font-size: 3rem;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        nav a{
+            background-color: black;
+            display: flex;
+           /* color: aqua; */
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+        }
+        nav a{
+            color: rgb(255, 255, 255) ;
+            text-decoration: solid;
+            font-weight: bold;
+            transition:color 0.5s;
+
+        }
+        nav a:hover{
+            color: rgb(154, 32, 32);
+            
+        }
+        section{
+            padding: 60px;
+        }
+        .specs{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #d4bcbc;
+        }
+        .specs-1{
+            background:#f7f6f6;
+            border-radius: 10px;
+            box-shadow: 0 6px 8px rgba(230, 11, 11, 0.7);
+            margin: 15px;
+            padding: 20px;
+            width: 200px;
+
+        }
+        .specs-1:hover{
+            transform: scale(1.2);
+        }
+        .gallery{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+
+        }
+        .gallery img{
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+
+        }
+        .gallery img:hover{
+            transform: scale(1.2);
+        }
+        .video{
+            display:flex;
+            justify-content: center;
+        }
+        iframe{
+            width: 75%;
+            height: 300px;
+            border-radius: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#gallery">Cars</a>
+        <a href="#specs">Specification</a>
+        <a href="#about">About</a>
+        <a href="#video">Videos</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <header>
+        <h1>Welcome to BMW Premium Showroom</h1>
+    </header>
+    <section id="specs" class="specs">
+       <div class="specs-1">
+        <h3>BMW X5</h3>
+        <p>Engine: 2998 cc - 3998 cc</p>
+        <p>Top Speed: 243 kmph</p>
+        <p>Drive Type: 4WD</p>
+    </div> 
+    <div  class="specs-1">
+        <h3>BMW Convertible. M4</h3>
+        <p>Engine: 3023 cc - 3998 cc</p>
+        <p>Top Speed: 343 kmph</p>
+        <p>Drive Type: 6WD</p>
+    </div> 
+    <div  class="specs-1">
+        <h3>BMW X1</h3>
+        <p>Engine: 2993 cc - 3998 cc</p>
+        <p>Top Speed: 443 kmph</p>
+        <p>Drive Type: 5WD</p>
+    </div> 
+    </section>
+    <section>
+       <mark><h1>About BMW:</h1></mark> 
+        <h3><P style="background-color: antiquewhite;">BMW's reputation for performance, luxury, and innovation sets it apart in the automotive world. Key characteristics include their focus on driver engagement through rear-wheel drive and near-perfect weight distribution, making for a responsive and enjoyable driving experience. BMW also stands out for its technological advancements, including the iDrive system, driver assistance features, and its commitment to electric and hybrid vehicle development. Furthermore, the M division's high-performance models like the M3 and M5 are highly regarded for their precision engineering and exhilarating driving dynamics. 
+Here's a more detailed look:
+Driving Dynamics:
+BMWs are renowned for their engaging driving experience, often described as the "Ultimate Driving Machine." This stems from their rear-wheel-drive layout, near-perfect weight distribution, and responsive steering. 
+Innovation:
+BMW has a history of technological innovation, from the iDrive system to advanced driver assistance features and a focus on electric and hybrid vehicles. 
+M Division:
+The BMW M division produces high-performance versions of standard models, like the M3 and M5, known for their exceptional performance and precision engineering. 
+Luxury and Design:
+BMW vehicles are known for their premium interiors and distinctive styling, appealing to a wide range of drivers. 
+Sustainability:
+BMW is also demonstrating a commitment to sustainability with its efforts in electric and hybrid technology, as well as integrating sustainable practices throughout its operations, according to the BMW Group. </P></h3>
+    </section>
+    <section id="gallery" class="gallery">
+    <img src="img.1.jpg" alt="car1">
+    <img src="high.jpg" alt="car2">
+    <img src="bmw.5.jpg" alt="car3">
+    <img src="bmw.jpg" alt="car4">
+    </section>
+    <hr>
+    <section id="video" class="video">
+        <h1>New Updated video:</h1><br><br>
+     <iframe width="560" height="300" src="https://www.youtube.com/embed/23_sxpcNnMg?si=QY2nnZ5FIP1Glakn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+    <hr>
+    <section id="contact" class="contact">
+        <h1>CONTACT DETAILS:</h1><br>
+        <h2>Place your order on :+91 9080846254</h2>
+        <h2>Showrome no : 9867 5643 4333</h2>
+        <h2>Address: BMW Showrome no 6 new road blr 637005.</h2>
+    </section>
+</body>
+</html>
