@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Bikes Showroom</title>
+    <link rel="stylesheet" href="project 11.css">
+</head>
+<body>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#available bikes">About</a>
+                <a href="#bike specs">Specifications</a>
+                <a href="#videos">Videos</a>
+                <a href="#contact">Contact</a>
+            </nav>
+    <section id="home">
+        <h1>Welcome to Super Bikes Showroom</h1>
+        <p>Find your Dream Bike us!</p>
+    </section>
+    <section id="bike specs">
+        <h2>Bike collections</h2>
+            <div class="bike">
+                <img src="r15.webp" alt="Bike 1">
+                <h3>Yamaha R15</h3>
+                <p>Rs. 1,80,000</p>
+                <button onclick="addToCart('Yamaha R15')">Add to Cart</button>
+            </div>
+           <div class="bike">
+                <img src="royal.avif" alt="Bike 2">
+                <h3>Royal Enfield Classic</h3>
+                <p>Rs.2,10,000</p>
+                <button onclick="addToCart('Royal Enfield Classic')">Add to Cart</button>
+           </div>
+            <div class="bike">
+                <img src="pulser.avif" alt="Bike 2">
+                <h3>Pulser rr310</h3>
+                <p>Rs.2,10,000</p>
+                <button onclick="addToCart('Pulser rr310')">Add to Cart</button>
+            </div>
+            <div class="bike">
+                <img src="java.avif" alt="Bike 2">
+                <p>Java zx390</p>
+                <p>Rs.8,90,000</p>
+                <button onclick="addToCart('Java zx390')">Add to Cart</button>
+            </div>
+            <div class="bike">
+                <img src="ninja.avif" alt="Bike 3">
+                <h3>Ninja h2r</h3>
+                <p>Rs.24,95,000</p>
+                <button onclick="addToCart('Ninja h2r')">Add to Cart</button>
+            </div>
+            <h3 id="cart-items">Cart: Empty</h3>
+        </div>
+    </section>
+    <section id="available bikes">
+        <h2>Available Bikes</h2>
+        <div>
+            <input type="text" id="searchbox" placeholder="Search Bikes..." onkeyup="searchbikes()">
+        </div>
+        <div id="bikelist">
+            <div class="bike-card" data-name="Yamaha R15">
+                <img src="r15.webp" alt="Bike 1">
+                <h3>Yamaha R15</h3>
+                <p>Rs. 1,80,000</p>
+            </div>
+            <div class="bike-card" data-name="Royal Enfield Classic">
+                <img src="royal.avif"  alt="Bike 2">
+                <h3>Royal Enfield Classic</h3>
+                <p>Rs.2,10,000</p>
+            </div>
+            <div class="bike-card" data-name="Pulser rr 310">
+                <img src="pulser.avif"  alt="Bike 3">
+                <h3>Pulser rr 310</h3>
+                <p>Rs.2,10,000</p>
+            </div>
+            <div class="bike-card" data-name="Java zx 390">
+                <img src="java.avif"  alt="Bike 4">
+                <p>Java zx 390</p>
+                <p>Rs.8,90,000</p>
+            </div>
+            <div class="bike-card" data-name="ninja h2r">
+                <img src="ninja.avif" alt="Bike 5">
+                <h3>Ninja h2r</h3>
+                <p>Rs.24,95,000</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact US</h2>
+        <form action="" id="contactform">
+            <input type="text" id="name" placeholder="Enter the Name">
+            <input type="email" id="email" placeholder="Enter the Email">
+            <input type="tel" id="phone" placeholder="Mobile Number">
+            <textarea name="message" id="message" placeholder="Your Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    <div id="thankyou">
+        <h2>Thank You</h2>
+        <p>We have received your message.Our Team will  contact you soon</p>
+    </div>
+</body>
+<script>
+    let cart = [];
+    function addToCart(bikeName){
+        cart.push(bikeName);
+        document.getElementById("cart-items").innerText = "Cart : " + cart.join(",");
+    }
+
+    function searchbikes(){
+            let filter = document.getElementById("searchbox").value.toLowerCase();
+            let bikes = document.querySelectorAll(".bike-card");   
+            bikes.forEach(bike=>{
+                let name = bike.getAttribute("data-name").toLowerCase();
+                bike.style.display = name.includes(filter)?"block" : "none";
+        })
+    }
+    
+    document.getElementById("contactform").addEventListener("submit",function(e){
+            e.preventDefault();
+
+        let name = document.getElementById("name").value.trim()
+        let email = document.getElementById("email").value.trim()
+        let phone = document.getElementById("phone").value.trim()
+        let message = document.getElementById("message").value.trim()
+
+        if (name==="" || email==="" || phone ==="" || message===""){
+            alert("All fields are required");
+            return;
+        }
+        if(!email.includes("@")){
+            alert("Enter a valid email");
+            return;
+        }
+        if(phone.length<10){
+            alert("Enter the valid mobile number");
+            return;
+        }
+        document.getElementById("contact").style.display = "none"
+        document.getElementById("thankyou").style.display = "block"
+
+    })
+
+</script>
+</html>
